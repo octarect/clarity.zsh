@@ -1,2 +1,3 @@
-# thug.zsh
-an oh-my-zsh shell theme for thugs
+# refined.zsh
+
+A zsh theme focused on simpleness and usefulness.
