@@ -4,20 +4,19 @@
 
 REFINED_MODULES=(
   dir
-  foo
+  host
   time
 )
 
-SEGMENT_SEPARATOR=''
 REFINED_PREFIX=' '
 REFINED_SEPARATOR=' '
 
 function prompt_time() {
-  echo %D{%T}
+  echo -n '%D{%T}'
 }
 
-function prompt_foo() {
-  echo '%F{221}foo%f'
+function prompt_host() {
+  echo -n '%F{yellow}@%M%f'
 }
 
 function prompt_dir() {
@@ -48,7 +47,7 @@ function prompt_dir() {
   else
     dirpath=$_dirpath
   fi
-  echo '%B%F{cyan}'$dirpath'%f%b'
+  echo -n '%B%F{cyan}'$dirpath'%f%b'
 }
 
 function prompt_prefix() {
