@@ -6,6 +6,7 @@ REFINED_MODULES=(
   dir
   host
   time
+  git
 )
 
 REFINED_PREFIX=' '
@@ -48,6 +49,10 @@ function prompt_dir() {
     dirpath=$_dirpath
   fi
   echo -n '%B%F{cyan}'$dirpath'%f%b'
+}
+
+function prompt_git() {
+  echo -n "$(git_prompt_info)"
 }
 
 function prompt_prefix() {
