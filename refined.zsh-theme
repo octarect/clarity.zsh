@@ -56,7 +56,12 @@ ZSH_THEME_GIT_PROMPT_ADDED='%F{green} %f'
 ZSH_THEME_GIT_PROMPT_MODIFIED='%F{yellow} %f'
 ZSH_THEME_GIT_PROMPT_DELETED='%F{red} %f'
 function prompt_git() {
-  echo -n " $(git_prompt_info) $(git_prompt_status)"
+  info=$(git_prompt_info)
+  if [ -n "${info}" ]; then
+    echo -n " ${info} $(git_prompt_status)"
+  else
+    echo -n ''
+  fi
 }
 
 function prompt_prefix() {
