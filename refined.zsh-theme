@@ -51,8 +51,12 @@ function prompt_dir() {
   echo -n '%B%F{cyan}'$dirpath'%f%b'
 }
 
+
+ZSH_THEME_GIT_PROMPT_ADDED='%F{green} %f'
+ZSH_THEME_GIT_PROMPT_MODIFIED='%F{yellow} %f'
+ZSH_THEME_GIT_PROMPT_DELETED='%F{red} %f'
 function prompt_git() {
-  echo -n "$(git_prompt_info)"
+  echo -n " $(git_prompt_info) $(git_prompt_status)"
 }
 
 function prompt_prefix() {
