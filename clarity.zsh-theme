@@ -2,15 +2,15 @@
  # refined.zsh-theme
 ####################
 
-REFINED_MODULES=(
+CLARITY_MODULES=(
   dir
   host
   time
   git
 )
 
-REFINED_PREFIX=' '
-REFINED_SEPARATOR=' '
+CLARITY_PREFIX='  '
+CLARITY_SEPARATOR=' '
 
 function prompt_time() {
   echo -n '%D{%T}'
@@ -65,7 +65,7 @@ function prompt_git() {
 }
 
 function prompt_prefix() {
-  echo -n "%(?.%F{green}$REFINED_PREFIX%f.%F{red}$REFINED_PREFIX%f)"
+  echo -n "%(?.%F{green}$CLARITY_PREFIX%f.%F{red}$CLARITY_PREFIX%f)"
 }
 
 function prompt_chars() {
@@ -74,12 +74,12 @@ function prompt_chars() {
 
 function build_prompt() {
   first=1
-  for module in $REFINED_MODULES
+  for module in $CLARITY_MODULES
   do
     if [ $first -eq 1 ]; then
       first=0
     else
-      echo -n '%{%f%b%k%}'$REFINED_SEPARATOR
+      echo -n '%{%f%b%k%}'$CLARITY_SEPARATOR
     fi
     echo -n "$(prompt_$module)"
   done
