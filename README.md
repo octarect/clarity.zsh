@@ -12,10 +12,16 @@ The prompt theme requires a font including [Font Awesome](http://fontawesome.io/
 
 ## Installation
 
+### zinit
+
+```
+zinit light rkoder/clarity.zsh
+```
+
 ### zplug
 
 ```
-zplug 'nbitmage/clarity.zsh', from:github, as:theme, defer:2
+zplug rkoder/clarity.zsh', from:github, as:theme, defer:2
 ```
 
 You can choose any other way to install the prompt.   Please contribute to improve this document.
